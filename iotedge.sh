@@ -50,8 +50,8 @@ echo "##########################################"
 echo "#           Configure iotedge            #"
 echo "##########################################"
 
-sed -i 's/azureiotedge-agent:1.0/azureiotedge-agent:1.0.9-linux-arm64v8/g' config.yaml
-sed -i 's/<ADD DEVICE CONNECTION STRING HERE>/HostName=armisv-iot-hub.azure-devices.net;DeviceId=armisv-device-simulation;SharedAccessKey=YrTlhO7o514zgFeZOx5oeRXNUdH7nDiuB+ZbKi2AI+Q=/g' config.yaml
+sudo sed -i 's/azureiotedge-agent:1.0/azureiotedge-agent:1.0.9-linux-arm64v8/g' /etc/iotedge/config.yaml
+sudo sed -i 's/<ADD DEVICE CONNECTION STRING HERE>/HostName=armisv-iot-hub.azure-devices.net;DeviceId=armisv-device-simulation;SharedAccessKey=YrTlhO7o514zgFeZOx5oeRXNUdH7nDiuB+ZbKi2AI+Q=/g' /etc/iotedge/config.yaml
 
 sudo systemctl restart iotedge
 sudo systemctl status iotedge
