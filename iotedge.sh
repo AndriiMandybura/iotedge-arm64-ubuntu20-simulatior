@@ -37,7 +37,7 @@ curl https://sh.rustup.rs -sSf | sh
 echo $PATH > temp-env && sed -e 's/$/:~/.cargo/env/' temp-env > temp-env2 && export $PATH=$(cat temp-env2) && rm temp-*
 
 echo "##########################################"
-echo "#           Install iotedge            #"
+echo "#           Install iotedge              #"
 echo "##########################################"
 
 wget https://github.com/Azure/azure-iotedge/releases/download/1.0.10.2/iotedge_1.0.10.2-1_debian9_arm64.deb
@@ -51,7 +51,7 @@ echo "#           Configure iotedge            #"
 echo "##########################################"
 
 sudo sed -i 's/azureiotedge-agent:1.0/azureiotedge-agent:1.0.9-linux-arm64v8/g' /etc/iotedge/config.yaml
-sudo sed -i 's/<ADD DEVICE CONNECTION STRING HERE>/HostName=armisv-iot-hub.azure-devices.net;DeviceId=armisv-device-simulation;SharedAccessKey=YrTlhO7o514zgFeZOx5oeRXNUdH7nDiuB+ZbKi2AI+Q=/g' /etc/iotedge/config.yaml
+sudo sed -i 's/<ADD DEVICE CONNECTION STRING HERE>/HostName=Armisv-hub.azure-devices.net;DeviceId=armisv-iotedge-device;SharedAccessKey=tu8MOhgbcBUE1/EKZVM0qX/SkcI1iorBBCZy/WcWQLY=/g' /etc/iotedge/config.yaml
 
 sudo systemctl restart iotedge
 sudo systemctl status iotedge
